@@ -39,4 +39,11 @@ function quicksort(array) {
 // console.log(sortedArray); // [1, 1, 2, 3, 6, 8, 10]
 
 // Export for use in other modules
-module.exports = quicksort;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = quicksort;
+}
+
+// For browser usage
+if (typeof window !== 'undefined') {
+  window.quicksort = quicksort;
+}
